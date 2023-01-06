@@ -11,7 +11,7 @@ class ClientesController extends Controller
 
 	public function index()
 	{
-		// Clientes::find(1)->delete();
+		// Clientes::find(6)->delete();
 		// $obj = Clientes::find(2);
 		// $obj->nome = "nome atualizado";
 		// $obj->save();
@@ -29,7 +29,7 @@ class ClientesController extends Controller
 
 	public function inserir(Request $req)
 	{
-		if ($req->has('nome')) {
+		if ($req->has('nome')){
 			//Existe um post, apenas inserir!
 			$nome = $req->input('nome');
 			$email = $req->input('email');
@@ -38,9 +38,9 @@ class ClientesController extends Controller
 			$clientes->email = $email;
 			$clientes->save();
 			echo '<script>alert("Inserido com sucesso!")</script>';
-			echo '<script>location.href="' . BASE_URL . '"</script>';
+			echo '<script>location.href="'.BASE_URL.'"</script>';
 			die();
-			//	return redirect('/');
+			// return redirect('/');
 		}
 	}
 }
